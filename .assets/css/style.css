@@ -63,6 +63,13 @@ header nav ul li a {
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+header nav ul li a:hover {
+    background: #fce138;
+    color: #024e76;
+    border-radius: 15px;
+    text-shadow: none;
+}
+
 footer {
     background: #fce138;
     width: 100%;
@@ -125,6 +132,11 @@ section{
     border-radius: 15px;
 }
 
+.hero-form button:hover {
+    background-color: #39a6b2;  
+}
+  
+
 h3 {
     margin: 0;
     font-size: 18px;
@@ -172,7 +184,7 @@ h3 {
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-header nav ul li a:hover {
+.header nav ul li a:hover {
     background: #fce138;
     color: #024e76;
     border-radius: 15px;
@@ -203,6 +215,7 @@ header nav ul li a:hover {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    border-bottom: 1px solid #39a6b2;
 }
 
 
@@ -392,10 +405,71 @@ header nav ul li a:hover {
 
 .form-input {
 border-radius: 10px;
+background-color: rgba(255,255,255, 0.75);
 }
 
 .hero-form button {
 border-radius: 10px;
+}
+
+.checkbox-wrapper input, .radio-wrapper input {
+    opacity: 0;
+}
+  
+.checkbox-wrapper label, .radio-wrapper label {
+    position: relative;
+    left: 10px;
+    margin: 10px;
+    line-height: 1.6;
+}
+
+.checkbox-wrapper label::before, .radio-wrapper label::before {
+    content: "";
+    height: 20px;
+    width: 20px;
+    background: rgba(255, 255, 255, 0.75);  
+    border: 1px solid var(--secondary-color);  
+    position: absolute;
+    top: -4px;
+    left: -30px;
+  }
+  
+  .radio-wrapper label::before {
+    border-radius: 50%;
+  }
+  
+.radio-wrapper label::after {
+    content: "";
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    position: absolute;
+    left: -29px;
+    top: -3px;
+    background-image: radial-gradient(circle, var(--tertiary-color), var(--secondary-color));
+}
+  
+.checkbox-wrapper label::after {
+    content: "";
+    height: 6px;
+    width: 14px;
+    border-left: 2px solid var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    position: absolute;
+    left: -26px;
+    top: 1px;
+    transform: rotate(-58deg);
+}
+  
+.checkbox-wrapper input + label::after, 
+.radio-wrapper input + label::after {
+    content: none;
+}
+  
+.checkbox-wrapper input:checked + label::after, 
+.radio-wrapper input:checked + label::after {
+    content: "";
 }
 
 .contact-form input, .contact-form textarea {
